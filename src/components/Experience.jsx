@@ -3,57 +3,65 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      role: 'Software Engineer Intern',
-      company: 'Tech Solutions Ltd',
-      dates: 'June 2022 - August 2022',
-      details: [
-        'Built and deployed REST APIs in Node.js for 10K+ daily users.',
-        'Optimized React components, reducing page load by 35%.',
-        'Collaborated with cross-functional teams to deliver features on time.'
+      title: 'Software Engineering Student',
+      company: 'Moringa School',
+      date: 'May 2025 - November 2025',
+      description: 'Completed intensive software engineering bootcamp, mastering full-stack development with hands-on projects. Collaborated with teams to build real-world applications using modern technologies.',
+      achievements: [
+        'Built 6+ full-stack projects including SyncHUB and Wordle Game Clone',
+        'Mastered React, Flask, Node.js, PostgreSQL, and Python',
+        'Graduated November 14th, 2025 with comprehensive software engineering skills'
       ]
     },
     {
-      role: 'Freelance Developer',
-      company: 'Self-Employed',
-      dates: 'January 2021 - Present',
-      details: [
-        'Developed custom web applications for small businesses.',
-        'Implemented responsive designs and SEO best practices.',
-        'Maintained client communication and project documentation.'
+      title: 'Soft Skills Training',
+      company: 'AMI (African Management Institute)',
+      date: '2025',
+      description: 'Completed comprehensive soft skills training program covering essential professional competencies for workplace success and team collaboration.',
+      achievements: [
+        'Completed all 10 soft skills modules',
+        'Earned certification in professional development',
+        'Enhanced communication, leadership, and teamwork abilities'
       ]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Relevant Experience
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-        </div>
+    <div className="container">
+      <div className="section-title">
+        <h2>Work Experience</h2>
+      </div>
 
-        <div className="space-y-10">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg"
-            >
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {exp.role} - <span className="text-blue-600 dark:text-blue-400">{exp.company}</span>
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 italic mb-4">{exp.dates}</p>
-              <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                {exp.details.map((detail, i) => (
-                  <li key={i}>{detail}</li>
+      <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+        <p style={{ fontSize: '1.125rem', color: 'var(--text-light)' }}>
+          My educational journey and training in software engineering. Fresh graduate with hands-on experience 
+          building real-world applications and strong foundation in both technical and soft skills.
+        </p>
+      </div>
+
+      <div className="experience-grid">
+        {experiences.map((exp, index) => (
+          <div key={index} className="experience-card">
+            <div className="experience-title">{exp.title}</div>
+            <div className="experience-company">{exp.company}</div>
+            <div className="experience-date">{exp.date}</div>
+            <p style={{ color: 'var(--text-light)', marginBottom: '1rem', lineHeight: '1.6' }}>
+              {exp.description}
+            </p>
+            <div>
+              <h4 style={{ color: 'var(--bright-blue)', fontSize: '1rem', marginBottom: '0.5rem' }}>Key Achievements:</h4>
+              <ul style={{ color: 'var(--text-light)', paddingLeft: '1.5rem' }}>
+                {exp.achievements.map((achievement, i) => (
+                  <li key={i} style={{ marginBottom: '0.5rem', fontSize: '0.95rem' }}>
+                    {achievement}
+                  </li>
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

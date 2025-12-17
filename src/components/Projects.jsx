@@ -3,121 +3,136 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/api/placeholder/400/250',
-      tech: ['React', 'Firebase', 'Material-UI', 'Socket.io'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: 'SyncHUB',
+      description: 'A modern, full-stack file synchronization and management platform enabling seamless file sharing and synchronization across multiple devices with real-time updates.',
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop',
+      technologies: ['React', 'Flask', 'PostgreSQL', 'MinIO', 'JWT', 'Tailwind CSS'],
+      demoLink: 'https://sync-hub-app.vercel.app/login',
+      githubLink: 'https://github.com/fidel-otieno2/SyncHUB-APP'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasts, interactive maps, and weather alerts using multiple APIs.',
-      image: '/api/placeholder/400/250',
-      tech: ['JavaScript', 'OpenWeather API', 'Chart.js', 'CSS3'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: 'Wordle Game Clone',
+      description: 'A full-stack Wordle game clone with authentication, game state persistence, and statistics tracking. Features animated tiles, keyboard feedback, and color-coded hints.',
+      image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop',
+      technologies: ['React', 'Vite', 'Flask', 'PostgreSQL', 'JWT', 'Alembic'],
+      demoLink: 'https://full-stack-wordle-clone-game.vercel.app/',
+      githubLink: 'https://github.com/fidel-otieno2/full-stack-WORDLE-CLONE-game'
     },
     {
-      title: 'Blog Platform',
-      description: 'A modern blogging platform with markdown support, SEO optimization, and content management system built with Next.js.',
-      image: '/api/placeholder/400/250',
-      tech: ['Next.js', 'Sanity CMS', 'TailwindCSS', 'Vercel'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: 'Wordle CLI Python',
+      description: 'A comprehensive CLI implementation of Wordle with user authentication, game statistics tracking, and rich terminal UI. Features daily word challenges, streak tracking, and database persistence.',
+      image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400&h=300&fit=crop',
+      technologies: ['Python', 'SQLAlchemy', 'PostgreSQL', 'Alembic', 'Rich', 'bcrypt'],
+      demoLink: '#',
+      githubLink: 'https://github.com/fidel-otieno2/phase3-wordle-clone'
     },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website showcasing projects, skills, and experience with modern design and smooth animations.',
-      image: '/api/placeholder/400/250',
-      tech: ['React', 'TailwindCSS', 'Framer Motion', 'Vite'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: "Martin's Hospital Website",
+      description: 'A comprehensive healthcare website with multi-page navigation, patient management system, appointment booking with conflict detection, and MySQL database integration.',
+      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop',
+      technologies: ['Node.js', 'Express', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+      demoLink: 'https://martins-hospital.vercel.app/',
+      githubLink: 'https://github.com/fidel-otieno2/Martins-hospital'
     },
     {
-      title: 'Chat Application',
-      description: 'Real-time chat application with private messaging, group chats, and file sharing capabilities.',
-      image: '/api/placeholder/400/250',
-      tech: ['React', 'Socket.io', 'Express', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: 'Smart Goal Planner',
+      description: 'A modern financial goal tracking application that helps users set, track, and manage their goals. Features include goal creation, deposits, progress updates, filtering, and an overview dashboard.',
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=300&fit=crop',
+      technologies: ['React', 'Vite', 'JSON Server', 'REST API', 'CSS'],
+      demoLink: 'https://s-g-p-s1so.vercel.app/',
+      githubLink: 'https://github.com/fidel-otieno2/S-G-P'
+    },
+    {
+      title: 'Wordle React Edition',
+      description: 'A stylish Wordle game clone with beautiful animated tiles, keyboard interactions, and color-coded feedback. Features rainbow backgrounds, twinkling stars, and mobile-responsive design.',
+      image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=300&fit=crop',
+      technologies: ['React', 'Vite', 'CSS Modules', 'LocalStorage'],
+      demoLink: 'https://wordle-clone-seven-xi.vercel.app/',
+      githubLink: 'https://github.com/fidel-otieno2/wordle-clone'
     }
   ];
 
   return (
-    <section id="projects" className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on, showcasing my skills in full-stack development
-          </p>
-        </div>
+    <div className="container">
+      <div className="section-title">
+        <h2>My Projects</h2>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 text-sm">Project Screenshot</span>
+      <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+        <p style={{ fontSize: '1.125rem', color: 'var(--text-light)' }}>
+          Here are some of my recent projects that showcase my skills in full-stack development, 
+          UI/UX design, and problem-solving. Each project represents a unique challenge and solution.
+        </p>
+      </div>
+
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="project-image"
+              onError={(e) => {
+                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjM2I4MmY2Ii8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2cHgiPlByb2plY3Q8L3RleHQ+Cjwvc3ZnPg==';
+              }}
+            />
+            <div className="project-content">
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              
+              <div className="tech-tags">
+                {project.technologies.map((tech, techIndex) => (
+                  <span key={techIndex} className="tech-tag">{tech}</span>
+                ))}
               </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex space-x-4">
-                  <a
-                    href={project.liveUrl}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded text-sm font-medium transition-colors duration-200"
+              
+              <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
+                {project.demoLink !== '#' && (
+                  <a 
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{ 
+                      padding: '0.5rem 1rem', 
+                      fontSize: '0.875rem',
+                      textDecoration: 'none',
+                      display: 'inline-block'
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(project.demoLink, '_blank', 'noopener,noreferrer');
+                    }}
                   >
                     Live Demo
                   </a>
-                  <a
-                    href={project.githubUrl}
-                    className="flex-1 border-2 border-gray-300 dark:border-gray-600 hover:border-blue-600 dark:hover:border-blue-400 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-center py-2 px-4 rounded text-sm font-medium transition-colors duration-200"
+                )}
+                {project.githubLink !== '#' && (
+                  <a 
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    style={{ 
+                      padding: '0.5rem 1rem', 
+                      fontSize: '0.875rem',
+                      textDecoration: 'none',
+                      display: 'inline-block'
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(project.githubLink, '_blank', 'noopener,noreferrer');
+                    }}
                   >
                     GitHub
                   </a>
-                </div>
+                )}
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="https://github.com"
-            className="inline-flex items-center bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-200"
-          >
-            <svg className="w-2 h-2 mr-2" fill="currentColor" viewBox="0 0 24 14">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            View More on GitHub
-          </a>
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

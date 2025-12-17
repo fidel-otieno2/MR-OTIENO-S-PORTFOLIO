@@ -1,54 +1,74 @@
 import React from 'react';
 
 const About = () => {
+  const stats = [
+    { number: '5+', label: 'Years Experience' },
+    { number: '50+', label: 'Projects Completed' },
+    { number: '30+', label: 'Happy Clients' },
+    { number: '15+', label: 'Technologies' },
+    { number: '24/7', label: 'Support Available' }
+  ];
+
   return (
-    <section id="about" className="min-h-screen pt-16 flex items-center justify-center">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">About Me</h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+    <div className="container">
+      <div className="section-title scale-in">
+        <h2>About Me</h2>
+      </div>
 
-        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-          I'm a software engineer specializing in full-stack web development
+      <div className="fade-in-up stagger-1" style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
+        <h3 style={{ color: 'var(--bright-blue)', marginBottom: '1rem' }}>
+          Passionate Full-Stack Developer
         </h3>
-        <p className="text-gray-700 dark:text-gray-400 mb-6 leading-relaxed max-w-2xl mx-auto">
-          With expertise in React, Node.js, Python, Docker, and cloud technologies (AWS),
-          I create efficient and scalable solutions that solve real-world problems.
+        <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--text-light)' }}>
+          I'm a dedicated software engineer with a passion for creating exceptional digital experiences. 
+          With expertise in modern web technologies, I build scalable solutions that solve real-world problems. 
+          I believe in clean code, user-centered design, and continuous learning.
         </p>
-        <p className="text-gray-700 dark:text-gray-400 mb-6 leading-relaxed max-w-2xl mx-auto">
-          When I'm not coding, you'll find me building AI side projects, contributing to
-          open-source communities, or mentoring aspiring developers.
+        <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--text-light)' }}>
+          When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+          or mentoring aspiring developers in the community.
         </p>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              🎯 Current Focus
-            </h4>
-            <p className="text-gray-700 dark:text-gray-400">
-              Building modern web applications with cutting-edge technologies
-            </p>
+      {/* Statistics Cards */}
+      <div className="stats-grid fade-in-up stagger-2">
+        {stats.map((stat, index) => (
+          <div key={index} className="stat-card">
+            <div className="stat-number">{stat.number}</div>
+            <div className="stat-label">{stat.label}</div>
           </div>
+        ))}
+      </div>
 
-          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              🌟 What I Love
-            </h4>
-            <p className="text-gray-700 dark:text-gray-400">
-              Clean code, performance optimization, and collaborative development
-            </p>
+      {/* What I Do Section */}
+      <div className="fade-in-up stagger-3" style={{ marginTop: '4rem' }}>
+        <h3 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)' }}>
+          What I Do
+        </h3>
+        <div className="grid-3 fade-in-up stagger-4">
+          <div className="card">
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
+              <h4 style={{ color: 'var(--bright-blue)', marginBottom: '1rem' }}>Current Focus</h4>
+              <p style={{ color: 'var(--text-light)' }}>
+                Building modern web applications with cutting-edge technologies like React, Node.js, 
+                and cloud platforms to deliver exceptional user experiences.
+              </p>
+            </div>
           </div>
-
-          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              📚 Always Learning
-            </h4>
-            <p className="text-gray-700 dark:text-gray-400">
-              Exploring new frameworks, cloud technologies, and best practices
-            </p>
+          <div className="card">
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📚</div>
+              <h4 style={{ color: 'var(--bright-blue)', marginBottom: '1rem' }}>Always Learning</h4>
+              <p style={{ color: 'var(--text-light)' }}>
+                Continuously exploring new frameworks, cloud technologies, and best practices 
+                to stay ahead in the rapidly evolving tech landscape.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
