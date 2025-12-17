@@ -41,7 +41,7 @@ const WhatILove = () => {
         </div>
         
         <div className="resume-button-container">
-          <a href="/resume.pdf" className="btn-primary" target="_blank" rel="noopener noreferrer">
+          <a href="/curriculum vitae.docx" className="btn-primary" target="_blank" rel="noopener noreferrer">
             View Resume
           </a>
         </div>
