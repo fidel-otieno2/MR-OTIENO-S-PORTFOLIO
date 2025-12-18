@@ -7,7 +7,7 @@ const RotatingTechIcons = () => {
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', name: 'Node.js' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', name: 'Python' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', name: 'MongoDB' },
-    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg', name: 'AWS' },
+    { icon: null, name: 'AWS' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', name: 'PostgreSQL' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg', name: 'GraphQL' }
   ];
@@ -24,7 +24,24 @@ const RotatingTechIcons = () => {
           }}
           title={tech.name}
         >
-          <img src={tech.icon} alt={tech.name} style={{ width: '100%', height: '100%' }} />
+          {tech.name === 'AWS' ? (
+            <div style={{
+              width: '100%',
+              height: '100%',
+              background: '#FF9900',
+              color: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.8rem',
+              fontWeight: 'bold',
+              borderRadius: '4px'
+            }}>
+              AWS
+            </div>
+          ) : (
+            <img src={tech.icon} alt={tech.name} style={{ width: '100%', height: '100%' }} />
+          )}
         </div>
       ))}
     </div>

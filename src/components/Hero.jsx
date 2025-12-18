@@ -1,9 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RotatingTechIcons from './RotatingTechIcons';
 
 const Hero = () => {
   const [showCelebration, setShowCelebration] = useState(false);
   const [isHiring, setIsHiring] = useState(false);
+  const [currentText, setCurrentText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const texts = ['🚀 Full-Stack Developer 💻', '🌐 Web Developer 🎨', '⚡ React Specialist 🔥', '🛠️ Problem Solver 💡'];
+  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const current = texts[currentIndex];
+      
+      if (isDeleting) {
+        setCurrentText(current.substring(0, currentText.length - 1));
+      } else {
+        setCurrentText(current.substring(0, currentText.length + 1));
+      }
+      
+      if (!isDeleting && currentText === current) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && currentText === '') {
+        setIsDeleting(false);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      }
+    }, isDeleting ? 50 : 100);
+    
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentIndex, texts]);
 
   const sendSMS = async (message) => {
     try {
@@ -62,9 +88,39 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className="hero-content">
-        <h1 className="fade-in-left stagger-1">Hi, I'm <br/><span className="gradient-text">FIDEL OTIENO MARTINS</span></h1>
+        <h1 className="fade-in-left stagger-1">Hi, I'm <br/><span 
+          className="gradient-text"
+          style={{
+            backgroundImage: 'url("/open.jpeg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            position: 'relative',
+            display: 'inline-block'
+          }}
+        >
+          <span style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8))',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            zIndex: 1
+          }}>
+            FIDEL OTIENO MARTINS
+          </span>
+          FIDEL OTIENO MARTINS
+        </span></h1>
         
-        <h2 className="fade-in-left stagger-2">🚀 Full-Stack Developer 💻</h2>
+        <h2 className="fade-in-left stagger-2">
+          {currentText}
+          <span className="typing-cursor">|</span>
+        </h2>
         
         <p className="fade-in-left stagger-3">
           Passionate about creating exceptional digital experiences through clean code and innovative solutions. 
@@ -127,14 +183,6 @@ const Hero = () => {
               boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
             }}
           >
-            {/* Floating flowers */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-2 left-4 text-2xl animate-bounce" style={{animationDelay: '0s'}}>🌸</div>
-              <div className="absolute top-8 right-6 text-3xl animate-bounce" style={{animationDelay: '0.5s'}}>🌺</div>
-              <div className="absolute bottom-12 left-8 text-2xl animate-bounce" style={{animationDelay: '1s'}}>🌻</div>
-              <div className="absolute bottom-6 right-4 text-3xl animate-bounce" style={{animationDelay: '1.5s'}}>🌷</div>
-              <div className="absolute top-16 left-1/2 text-2xl animate-bounce" style={{animationDelay: '2s'}}>🌹</div>
-            </div>
             
             {/* Profile image placeholder */}
             <div 
@@ -156,11 +204,9 @@ const Hero = () => {
             </p>
             
             <div className="flex justify-center gap-2 text-3xl animate-pulse">
-              <span>🎊</span>
-              <span>🎉</span>
               <span>🏆</span>
               <span>⭐</span>
-              <span>🔥</span>
+              
             </div>
             
             <button 

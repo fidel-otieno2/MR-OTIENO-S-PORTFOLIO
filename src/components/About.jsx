@@ -1,13 +1,6 @@
 import React from 'react';
 
 const About = () => {
-  const stats = [
-    { number: '5+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '30+', label: 'Happy Clients' },
-    { number: '15+', label: 'Technologies' },
-    { number: '24/7', label: 'Support Available' }
-  ];
 
   return (
     <div className="container">
@@ -30,18 +23,10 @@ const About = () => {
         </p>
       </div>
 
-      {/* Statistics Cards */}
-      <div className="stats-grid fade-in-up stagger-2">
-        {stats.map((stat, index) => (
-          <div key={index} className="stat-card">
-            <div className="stat-number">{stat.number}</div>
-            <div className="stat-label">{stat.label}</div>
-          </div>
-        ))}
-      </div>
+
 
       {/* What I Do Section */}
-      <div className="fade-in-up stagger-3" style={{ marginTop: '4rem' }}>
+      <div className="fade-in-up stagger-2" style={{ marginTop: '4rem' }}>
         <h3 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)' }}>
           What I Do
         </h3>

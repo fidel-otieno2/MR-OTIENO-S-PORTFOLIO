@@ -12,7 +12,7 @@ const Skills = () => {
     { name: 'Python', percentage: 60, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
     { name: 'Flask', percentage: 70, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
     { name: 'PostgreSQL', percentage: 68, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-    { name: 'AWS', percentage: 65, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+    { name: 'AWS', percentage: 65, icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
     { name: 'Git', percentage: 92, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
     { name: 'MySQL', percentage: 65, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
     { name: 'GraphQL', percentage: 66, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' }
@@ -62,7 +62,7 @@ const Skills = () => {
     { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
     { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
     { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+    { name: 'AWS', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
     { name: 'REST APIs', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' }
   ];
 
@@ -82,7 +82,24 @@ const Skills = () => {
       <div className="skills-grid" ref={skillsRef}>
         {skills.map((skill, index) => (
           <div key={index} className="skill-card fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-            <img src={skill.icon} alt={skill.name} className="skill-icon" />
+            {skill.name === 'AWS' ? (
+              <div className="skill-icon" style={{ 
+                background: '#FF9900', 
+                color: 'white', 
+                borderRadius: '4px', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                fontSize: '1.2rem', 
+                fontWeight: 'bold',
+                width: '3rem',
+                height: '3rem'
+              }}>
+                AWS
+              </div>
+            ) : (
+              <img src={skill.icon} alt={skill.name} className="skill-icon" />
+            )}
             <div className="skill-name">
               <span>{skill.name}</span>
               <span className="skill-percentage">
@@ -112,7 +129,24 @@ const Skills = () => {
         <div className="tech-grid">
           {technologies.map((tech, index) => (
             <div key={index} className="tech-item fade-in-up" style={{ animationDelay: `${index * 0.05}s` }}>
-              <img src={tech.icon} alt={tech.name} className="tech-icon" />
+              {tech.name === 'AWS' ? (
+                <div className="tech-icon" style={{ 
+                  background: '#FF9900', 
+                  color: 'white', 
+                  borderRadius: '4px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  fontSize: '1rem', 
+                  fontWeight: 'bold',
+                  width: '2.5rem',
+                  height: '2.5rem'
+                }}>
+                  AWS
+                </div>
+              ) : (
+                <img src={tech.icon} alt={tech.name} className="tech-icon" />
+              )}
               <span>{tech.name}</span>
             </div>
           ))}

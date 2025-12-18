@@ -10,6 +10,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
+import TypingWelcome from './components/TypingWelcome';
 import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <Navbar activeSection={activeSection} />
+      <TypingWelcome />
       
       <main>
         <section id="home">
