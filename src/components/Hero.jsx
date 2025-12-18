@@ -87,6 +87,65 @@ const Hero = () => {
 
   return (
     <div className="hero">
+      <style>{`
+        .hero {
+          padding: 1rem;
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-content {
+          order: 2;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+          line-height: 1.2;
+        }
+        .hero-content h2 {
+          font-size: 1.2rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .profile-image {
+          width: 250px;
+          height: 250px;
+          margin: 0 auto 2rem;
+        }
+        .btn-primary, .btn-secondary {
+          display: block;
+          width: 100%;
+          margin: 0.5rem 0;
+        }
+        @media (min-width: 768px) {
+          .hero {
+            padding: 2rem;
+            flex-direction: row;
+            text-align: left;
+          }
+          .hero-content {
+            order: 1;
+          }
+          .hero-content h1 {
+            font-size: 3rem;
+          }
+          .hero-content h2 {
+            font-size: 1.5rem;
+          }
+          .hero-content p {
+            font-size: 1.125rem;
+          }
+          .profile-image {
+            width: 400px;
+            height: 400px;
+            margin: 0;
+          }
+          .btn-primary, .btn-secondary {
+            display: inline-block;
+            width: auto;
+            margin-right: 1rem;
+          }
+        }
+      `}</style>
       <div className="hero-content">
         <h1 className="fade-in-left stagger-1">Hi, I'm <br/><span 
           className="gradient-text"
@@ -127,7 +186,7 @@ const Hero = () => {
           I specialize in modern web technologies and love turning ideas into reality.
         </p>
         
-        <div className="fade-in-up stagger-4" style={{marginTop: '2rem'}}>
+        <div className="fade-in-up stagger-4" style={{marginTop: '2rem'}} className="hero-buttons">
           <button 
             className="btn-primary pulse"
             onClick={handleHireClick}

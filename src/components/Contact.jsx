@@ -80,16 +80,39 @@ const Contact = () => {
       />
       
       {/* Content wrapper */}
-      <div style={{ maxWidth: '1600px', margin: '0 auto', padding: '0 3rem', position: 'relative', zIndex: 2 }}>
+      <div style={{ maxWidth: '1600px', margin: '0 auto', padding: '0 1rem', position: 'relative', zIndex: 2 }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .contact-wrapper { padding: 0 2rem !important; }
+          }
+          @media (min-width: 1024px) {
+            .contact-wrapper { padding: 0 3rem !important; }
+          }
+        `}</style>
       <div className="section-title">
         <h2>Get In Touch</h2>
       </div>
 
-      <div style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '1000px', margin: '0 auto 4rem' }}>
-        <h3 style={{ color: 'var(--bright-blue)', marginBottom: '1rem', fontSize: '2rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '2rem', maxWidth: '1000px', margin: '0 auto 2rem', padding: '0 1rem' }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .hero-text { margin-bottom: 4rem !important; }
+          }
+        `}</style>
+        <h3 style={{ color: 'var(--bright-blue)', marginBottom: '1rem', fontSize: '1.5rem' }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .hero-title { font-size: 2rem !important; }
+          }
+        `}</style>
           Fidel Otieno Martins
         </h3>
-        <p style={{ fontSize: '1.4rem', color: 'var(--text-light)', marginBottom: '2rem' }}>
+        <p style={{ fontSize: '1.1rem', color: 'var(--text-light)', marginBottom: '2rem' }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .hero-description { font-size: 1.4rem !important; }
+          }
+        `}</style>
           Full Stack Developer passionate about building scalable web applications and creating exceptional digital experiences.
         </p>
       </div>
@@ -101,11 +124,19 @@ const Contact = () => {
         </h3>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', 
-          gap: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', 
+          gap: '1rem',
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .quick-links-grid { 
+              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+              gap: 1.5rem !important;
+            }
+          }
+        `}</style>
           {['About', 'Skills', 'Projects', 'Experience', 'Services', 'Contact'].map((link, index) => (
             <a 
               key={index}
@@ -152,11 +183,19 @@ const Contact = () => {
         </h3>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-          gap: '2rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+          gap: '1rem',
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .services-grid { 
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+              gap: 2rem !important;
+            }
+          }
+        `}</style>
           {['Full-Stack Development', 'Web Development', 'API Development', 'Database Design'].map((service, index) => (
             <div 
               key={index}
@@ -187,7 +226,15 @@ const Contact = () => {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', alignItems: 'start' }}>
+        <style>{`
+          @media (min-width: 1024px) {
+            .contact-grid { 
+              grid-template-columns: 1fr 1fr !important;
+              gap: 6rem !important;
+            }
+          }
+        `}</style>
         {/* Contact Form */}
         <div className="contact-form" style={{ maxWidth: 'none' }}>
           {submitStatus === 'success' && (
